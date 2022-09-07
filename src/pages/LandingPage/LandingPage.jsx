@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import '../../App.css';
+import 'src/App.css';
 import { useStyles } from './styles';
-import logo from '../../logo.svg';
-import ButtonComponent from '../../components/ButtonComponent/ButtonComponent';
+import logo from 'src/logo.svg';
+import ButtonComponent from 'src/components/ButtonComponent/ButtonComponent';
 
 const LandingPage = ({ className, firebase, ...rest }) => {
   const classes = useStyles();

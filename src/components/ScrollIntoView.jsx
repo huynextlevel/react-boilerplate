@@ -1,15 +1,16 @@
 import { useEffect, useRef } from 'react';
-import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// import { animateScroll as scroll } from 'react-scroll';
+import { useLocation } from 'react-router-dom';
 
-const ScrollIntoView = ({ children, location }) => {
+import { withRouter } from 'src/hooks';
+
+const ScrollIntoView = ({ children }) => {
   const prevLocation = useRef();
+  const location = useLocation();
 
   useEffect(() => {
     if (prevLocation.current !== location.pathname) {
       window.scrollTo(0, 0);
-      // scroll.scrollToTop()
       prevLocation.current = location.pathname;
     }
   }, [location]);

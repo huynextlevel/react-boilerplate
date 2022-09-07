@@ -1,7 +1,8 @@
-import LandingPage from './pages/LandingPage/LandingPage';
+import LandingPage from 'src/pages/LandingPage/LandingPage';
+
 const routes = [
   {
-    path: "/",
+    path: '/',
     exact: true,
     layout: null,
     component: LandingPage,

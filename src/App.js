@@ -1,10 +1,14 @@
 import React, { useEffect } from 'react';
-import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
+import {
+  Route,
+  Routes,
+  BrowserRouter,
+} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import routes from './routes';
-import * as appActions from './store/action/app';
-import ScrollIntoView from './components/ScrollIntoView';
+import * as appActions from 'src/store/action/app';
+import ScrollIntoView from 'src/components/ScrollIntoView';
 
 const MOBILE_BREAKPOINT = 900; // Define mobile breakpoint of your website.
 
@@ -26,20 +30,19 @@ function App() {
   }, [dispatch]);
 
   return (
-    <Router>
+    <BrowserRouter>
       <ScrollIntoView>
-        <Switch>
+        <Routes>
           {routes.map((route, index) => (
             <Route
               key={index}
               path={route.path}
-              exact={route.exact}
-              component={(props) => <route.component {...props} />}
+              element={<route.component />}
             />
           ))}
-        </Switch>
+        </Routes>
       </ScrollIntoView>
-    </Router>
+    </BrowserRouter>
   );
 }
 
