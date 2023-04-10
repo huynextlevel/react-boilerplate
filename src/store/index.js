@@ -1,26 +1,30 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import { createLogger } from 'redux-logger';
-import allReducers from './reducers/index';
+import {
+	compose,
+	applyMiddleware,
+	legacy_createStore as createStore
+} from 'redux'
+import { createLogger } from 'redux-logger'
+import allReducers from './reducers/index'
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose,
 	logger = createLogger({
 		predicate: (getState, action) => {
-			return process.env.REACT_APP_ENVIRONMENT === 'development';
+			return process.env.REACT_APP_ENV === 'development'
 		},
-	});
+	})
 
 export default function configureStore(initialState) {
 	const enhancers = composeEnhancers(
 		applyMiddleware(
 			logger,
 		),
-	);
+	)
 
 	const store = initialState
 		? createStore(allReducers, initialState, enhancers)
-		: createStore(allReducers, enhancers);
+		: createStore(allReducers, enhancers)
 
-	return store;
+	return store
 }
 
-export const appStore = configureStore();
+export const appStore = configureStore()

@@ -1,4 +1,4 @@
-import LandingPage from 'src/pages/LandingPage/LandingPage';
+import LandingPage from 'src/pages/LandingPage'
 
 const routes = [
   {
@@ -7,6 +7,6 @@ const routes = [
     layout: null,
     component: LandingPage,
   },
-];
+]
 
-export default routes;
+export default routes
