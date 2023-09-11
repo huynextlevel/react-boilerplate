@@ -1,4 +1,4 @@
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from '@mui/styles'
 
 export const useStyles = makeStyles(() => ({
   buttonContainer: {
@@ -32,4 +32,4 @@ export const useStyles = makeStyles(() => ({
       }
     }
   }
-}));
+}))

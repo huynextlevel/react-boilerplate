@@ -1,9 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import {
-  Button,
-  CircularProgress
-} from '@mui/material'
+import { Button, CircularProgress } from '@mui/material'
 
 import { IButton } from './types'
 import { useStyles } from './styles'
